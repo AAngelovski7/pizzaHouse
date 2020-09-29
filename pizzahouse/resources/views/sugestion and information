@@ -1,0 +1,29 @@
+{{-- Allow to output dynamic values that are passed throug routes handler - ex. blade syntax      --}}
+        <p>{{$type}} - {{$base}} - {{$price}}</p>
+        @if($price > 15)
+            <p>This pizza is expensive</p>
+        @elseif($price <5)
+            <p>This pizza is cheap</p>
+         @else
+            <p>This pizza is normaly priced</p>
+        @endif
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        {{-- Oposite of if statement , ako e tocno ne printat ako ne e tocno printat        --}}
+        @unless($base == 'cheesy crust')
+            <p>You don`t have cheesy crust</p>
+        @endunless
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        {{-- Output regular php syntax        --}}
+        @php
+          $name = "shaun";
+          echo $name;
+        @endphp
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+        {{--        For loop from 1 to 5 --}}
+        @for($i=0; $i<=5; $i++)
+            <p>The value of i is {{$i}}</p>
+        @endfor
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
